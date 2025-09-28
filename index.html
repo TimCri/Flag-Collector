@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flag Collector</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ⭐ and 🐸 are now OUTSIDE the card so they can pin to the viewport -->
+  <div class="star">⭐</div>
+
+  <div class="page-card">
+    <div class="tab">flag/index.html</div>
+
+    <div class="card-content">
+      <h1>Collect the <span class="name">Flag</span></h1>
+      <p class="subtitle">Find all the hidden parts across HTML, CSS, and JS!</p>
+
+      <!-- Keep this box but it stays hidden (we no longer populate it) -->
+      <div id="finalFlag" style="display:none; margin-top:16px; padding:12px 16px; border:1px dashed #999; border-radius:8px; font-weight:600;"></div>
+
+      <div class="icons">
+        <a class="icon" href="instructions.html" title="Instructions">📜<span>Instructions</span></a>
+        <a class="icon" href="hint.html" title="Hint">💡<span>Hint</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="frog">🐸</div>
+
+  <!-- Hidden Flag Part 1: This -->
+  <script src="script.js"></script>
+</body>
+</html>
+
+

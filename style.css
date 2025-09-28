@@ -1,0 +1,88 @@
+:root{
+  --card-width: 560px;
+  --card-height: 380px;
+  --accent: #ff9a1a;
+  --muted: #6b7280;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+
+/* Page background and centering */
+body{
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  min-height:100vh;
+  background: linear-gradient(#ffffff 60%, #a8ddff 100%);
+  display:flex; align-items:center; justify-content:center;
+  color:#111;
+}
+
+/* --- STAR: fixed near the browser's top-left (content area) --- */
+.star{
+  position: fixed;
+  top: 8px;          /* close to refresh/URL area */
+  left: 8px;         /* hug the left edge */
+  font-size: 72px;   /* slightly bigger */
+  line-height: 1;
+  z-index: 9999;
+  pointer-events: none; /* avoid accidental clicks */
+}
+
+/* Main card (can bob independently) */
+.page-card{
+  width:var(--card-width);
+  background:#fff;
+  border-radius:6px;
+  border:1px solid #d1d5db;
+  box-shadow:0 6px 12px rgba(0,0,0,0.15);
+  overflow:hidden;
+  position:relative;
+  margin:0 16px;
+  z-index:10;
+}
+
+.page-card .tab{
+  background:#3f3f3f; color:#fff;
+  padding:10px 14px; font-size:14px;
+}
+
+.card-content{ padding:48px 36px 36px; text-align:center; }
+.card-content h1{ font-weight:300; font-size:38px; margin-bottom:8px; color:#333; }
+.card-content .name{ color:var(--accent); font-weight:700; font-size:48px; }
+.card-content .subtitle{ color:var(--muted); margin-bottom:28px; }
+.icons{ display:flex; justify-content:center; gap:22px; margin-top:8px; }
+
+/* --- Hidden Flag Part 2: $h!t --- */
+
+.icon{ display:flex; flex-direction:column; align-items:center; gap:8px; color:#374151; font-size:12px; }
+.icon svg{ width:56px; height:56px; stroke:#374151; stroke-width:2; fill:none; }
+
+/* Decorative "ocean" (if you add it) */
+.ocean{ position:fixed; left:0; right:0; bottom:0; height:240px; pointer-events:none; }
+.ocean::before{
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(180deg,#c7e7ff, #9fd3ff);
+  transform:skewY(-2deg);
+  border-top-left-radius:12px; border-top-right-radius:12px;
+}
+
+/* --- FROG: fixed at bottom-right inside the blue gradient --- */
+.frog{
+  position: fixed;
+  right: 24px;
+  bottom: 44px;      /* ensures it's clearly in the blue area */
+  font-size: 56px;   /* slightly bigger */
+  line-height: 1;
+  transform-origin:center bottom;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Small-screen tweaks */
+@media (max-width:700px){
+  .page-card{ width:90% }
+  .star{ top: 8px; left: 8px; font-size: 64px; }
+  .frog{ right: 16px; bottom: 28px; font-size: 48px; }
+}
+
+/* Accent tweak */
+.page-card .card-content h1 { color: var(--accent) !important; }
